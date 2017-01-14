@@ -1,4 +1,10 @@
-<h1>{{title}}</h1>
-<ul>
-  <li *ngFor="let hook of lifecycleHooks">{{hook}}</li>
-</ul>
+<h1>Study a Componenten's Lifecycle Hooks</h1>
+<button (click)="start()">Call component Lifecycle Hooks</button>
+<br><br>
+<button (click)="onChangeNumber()">Change the blue number from outside to 3000 and watch out for OnChange hook</button>
+<br><br>
+<button (click)="end()">End component Lifecycle Hooks and show the its OnDestroy message</button>
+<br>
+<app-lc-hooks *ngIf="lc" (deleted)="onDeleted($event)" [number]='number'></app-lc-hooks>
+<br>
+<p *ngIf="!lc" [ngClass]='destroyed'>{{destroyMessage}}</p>

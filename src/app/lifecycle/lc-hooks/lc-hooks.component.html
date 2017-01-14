@@ -1,0 +1,12 @@
+<article>
+  <h3>{{title}}</h3>
+  <p class="number">{{number}}</p>
+  <p class="number" #par>*** Bound paragraph value to be accessed by template reference ***</p>
+  <p>{{par.textContent}}</p>
+  <ul>
+    <li *ngFor="let hook of lifecycleHooks">{{hook}}</li>
+  </ul>
+  <button (click)="onChange()">Add an entry and watch the reulting lifecycle hooks</button>
+  <br><br>
+  <button (click)="number = 2000;">Cange the blue number to 2000 from inside and watch resulting lifecycle hooks</button>
+</article>

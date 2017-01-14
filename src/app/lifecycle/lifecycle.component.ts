@@ -1,56 +1,28 @@
-import {
-  Component,
-  EventEmitter,
-  Output,
-  OnChanges,
-  OnInit,
-  DoCheck,
-  AfterContentInit,
-  AfterContentChecked,
-  AfterViewInit,
-  AfterViewChecked,
-  OnDestroy
-} from '@angular/core';
+import { Component, EventEmitter, Input} from '@angular/core';
 
 @Component({
   selector: 'app-lifecycle',
   templateUrl: './lifecycle.component.html',
   styleUrls: ['./lifecycle.component.css']
 })
-export class LifecycleComponent implements OnChanges, OnInit, DoCheck,
-  AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked,
-  OnDestroy {
-  @Output() deleted = new EventEmitter<string>();
-  title: string = 'Component Lifecycle Hooks';
-  lifecycleHooks: string[] = [];
-  constructor() { }
-
-  ngOnChanges() {
-    this.logit('OnChanges');
-  };
-  ngOnInit() {
-    this.logit('OnInit');
+export class LifecycleComponent {
+  number: number = 1000;
+  lc: boolean = false;
+  destroyed: string = '';
+  destroyMessage: string = 'Here will appear the OnDestroy Message after the component was ended.';
+  start(){
+    this.destroyed = '';
+    this.lc = true;
   }
-  ngDoCheck() {
-    this.logit('DoCheck');
+  end(){
+    this.lc = false;
   }
-  ngAfterContentInit() {
-    this.logit('AfterContentInit');
+  onDeleted(value: string){
+    this.number = 1000;
+    this.destroyed = 'red';
+    this.destroyMessage = value;
   }
-  ngAfterContentChecked() {
-    this.logit('AfterContentChecked');
+  onChangeNumber(){
+    this.number = 3000;
   }
-  ngAfterViewInit() {
-    this.logit('AfterContentInit');
-  }
-  ngAfterViewChecked() {
-    this.logit('AfterViewChecked');
-  }
-  ngOnDestroy() {
-    this.deleted.emit('OnDestroy: Component LifeCycleHooks was deletet.');
-  }
-  private logit(hook) {
-    this.lifecycleHooks.push(hook)
-  }
-  
 }

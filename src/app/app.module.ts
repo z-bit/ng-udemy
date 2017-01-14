@@ -16,6 +16,7 @@ import { DbCostumComponent } from './databinding/db-costum/db-costum.component';
 import { DbEventComponent } from './databinding/db-event/db-event.component';
 import { DbTwoWayComponent } from './databinding/db-two-way/db-two-way.component';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
+import { LcHooksComponent } from './lifecycle/lc-hooks/lc-hooks.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LifecycleComponent } from './lifecycle/lifecycle.component';
     DbCostumComponent,
     DbEventComponent,
     DbTwoWayComponent,
-    LifecycleComponent
+    LifecycleComponent,
+    LcHooksComponent
   ],
   imports: [
     BrowserModule,
