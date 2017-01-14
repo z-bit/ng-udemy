@@ -1,0 +1,6 @@
+article {
+    border: dotted red 2px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}

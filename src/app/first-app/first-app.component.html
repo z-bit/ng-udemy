@@ -1,0 +1,23 @@
+<p>fist-app works!</p>
+
+<p>
+    By defining <b>fa-other</b> template as follows
+    we avoid rendering and keep the content from inbetween the <b>fa-other</b> selectors.</p>
+<pre><code>
+  &lt;article&gt;
+    &lt;ng-content&gt;&lt;/ng-content&gt;
+  &lt;/article&gt;
+</code></pre>
+
+
+<app-fa-other>
+  <h1>Hello World</h1>
+  <p>from app-fa-other</p>
+</app-fa-other>
+
+<app-fa-other>
+  something else
+  <p>from app-fa-other</p>
+</app-fa-other>
+
+<app-another></app-another>

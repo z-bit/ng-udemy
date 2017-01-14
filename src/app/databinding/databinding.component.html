@@ -1,0 +1,21 @@
+<h3>String Interpolation</h3>
+
+<p>{{string}} | {{number}}</p>
+<input type="text" value="{{string}}">
+<hr>
+
+<h3>Property Binding</h3>
+
+<input type="text" [value]="string">
+<p [ngClass]="{redBorder: true}">It this styled?</p>
+<p [ngStyle]="{color: 'blue'}">It this styled?</p>
+<hr>
+
+<h3>Custom Property Binding</h3>
+<app-db-costum [number]="66"></app-db-costum>
+<hr>
+<h3>Event Binding</h3>
+<app-db-event (clicked)="onClicked($event)"></app-db-event>
+<hr>
+<h3>Two Way Binding</h3>
+<app-db-two-way></app-db-two-way>
