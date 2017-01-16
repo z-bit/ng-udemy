@@ -17,6 +17,10 @@ import { DbEventComponent } from './databinding/db-event/db-event.component';
 import { DbTwoWayComponent } from './databinding/db-two-way/db-two-way.component';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { LcHooksComponent } from './lifecycle/lc-hooks/lc-hooks.component';
+import { DirectivesComponent } from './directives/directives.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { HighOnMouseoverDirective } from './directives/high-on-mouseover.directive';
+import { UnlessDirective } from './directives/unless.directive';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { LcHooksComponent } from './lifecycle/lc-hooks/lc-hooks.component';
     DbEventComponent,
     DbTwoWayComponent,
     LifecycleComponent,
-    LcHooksComponent
+    LcHooksComponent,
+    DirectivesComponent,
+    HighlightDirective,
+    HighOnMouseoverDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,

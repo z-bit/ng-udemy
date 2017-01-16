@@ -1,0 +1,11 @@
+.border {
+    border: 2px solid blue;
+}
+.background {
+    background-color: aqua;
+}
+.visible {
+    margin: 5px;
+    width: 100px;
+    height: 30px;
+}

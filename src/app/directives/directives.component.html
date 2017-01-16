@@ -1,0 +1,57 @@
+<h3>Attribute Directives</h3>
+<div class="ui raised segment">
+  <h4>ngClass / ngStyle</h4>
+  <div class="ui grid">
+    <div class="three wide column visible" [ngClass]="{border: true, background: true}"></div>
+    <div class="three wide column visible" [class.background]="true"></div>
+    <div class="three wide column visible" [ngStyle]="{'background-color': 'blue'}"></div>
+  </div>
+</div>
+<h3>Custom Attribute Directive</h3>
+<div class="ui raised segment">
+
+  <div appHighlight>Some Highlighted Text</div>
+  <div [highlight]="'red'">Highlighted when mouseover, colors as attributes, changes innerText when clicked and works only if console not shown! ??
+  </div>
+</div>
+<h3>Structural Directives</h3>
+<div class="ui raised segment">
+  <div class="ui grid">
+    <div class="six wide column">
+      <h4>*ngIf</h4>
+      <div class="ui grid">
+        <div class="five wide column">
+          <button class="ui primary button" (click)="onSwitch()">Toggle</button>
+        </div>
+        <div class="eleven wide column">
+          <span *ngIf="switch">&nbsp;&nbsp;This is the toggled text.</span>
+          <template [ngIf]="switch">
+            <span>&nbsp;&nbsp;Toggled text desugared.</span>
+          </template>
+        </div>
+        <b>*unless</b> <i>Custom Structural Directive</i>
+        <p *unless="switch">This shows when toggled text is off.</p>
+      </div>
+    </div>
+    <div class="four wide column">
+      <h4>*ngFor</h4>
+      <ul>
+        <li *ngFor="let item of items; let i = index">[{{i}}] -> {{item}}</li>
+      </ul>
+    </div>
+    <div class="six wide column">
+      <h4>[ngSwitch]="value" <br> &nbsp; &nbsp; *ngSwitchCase <br> &nbsp; &nbsp; *ngSwitchDefault</h4>
+        <div [ngSwitch]="value">
+          <p *ngSwitchCase="10">low</p>
+          <p *ngSwitchCase="99">high</p>
+          <p *ngSwitchDefault>neither 10 or 99</p>
+        </div>
+        <!-- desugared version -->
+        <div [ngSwitch]="value">
+          <template [ngSwitchCase]="10"><p>low - desugared</p></template>
+          <template [ngSwitchCase]="99"><p>high - desugared</p></template>
+          <template ngSwitchDefault><p>neither - desugared</p></template>
+        </div>
+    </div>
+  </div>
+</div>
