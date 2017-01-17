@@ -1,0 +1,9 @@
+<h2>Simple Data Service</h2>
+<p>add a number to to this data array</p>
+<div class="ui action input">
+  <input id="in" #inp type="number" placeholder="" (keyup)="onKey($event)" [(ngModel)]="inputValue">
+  <button class="ui button" (click)="onClick(inp.value)">Add</button>
+</div>
+<div class="ui raised segment">
+  <b>[ {{itemString}} ]</b>
+</div>

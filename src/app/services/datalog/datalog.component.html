@@ -1,0 +1,14 @@
+<h2>Datalog Service</h2>
+<h4>The Log service is injected into the Data service and logs what Data service is doing</h4>
+<p>add a number to to this data array (to make life easier please click the <b>Add</b> button)</p>
+<div class="ui action input">
+  <input #inp type="number" [(ngModel)]="inputValue">
+  <button class="ui button" (click)="onClick(inp.value)">Add</button>
+</div>
+<div class="ui raised segment">
+  <b>[ {{itemString}} ]</b>
+</div>
+<h3>Logging:</h3>
+<ul>
+  <li *ngFor="let log of logs">{{log}}</li>
+</ul>

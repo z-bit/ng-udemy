@@ -22,6 +22,22 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { HighOnMouseoverDirective } from './directives/high-on-mouseover.directive';
 import { UnlessDirective } from './directives/unless.directive';
 
+import { ServicesComponent } from './services/services.component';
+import { LogComponent } from './services/log/log.component';
+import { DataComponent } from './services/data/data.component';
+import { DatalogComponent } from './services/datalog/datalog.component';
+import { CommunicationComponent } from './services/communication/communication.component';
+import { Comp01Component } from './services/communication/comp01/comp01.component';
+import { Comp02Component } from './services/communication/comp02/comp02.component';
+
+import { LogService } from "./common/services/log.service";
+import { DataService } from 'app/common/services/data.service';
+import { DatalogService } from 'app/common/services/datalog.service';
+import { CommunicationService } from 'app/common/services/communication.service';
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +54,14 @@ import { UnlessDirective } from './directives/unless.directive';
     DirectivesComponent,
     HighlightDirective,
     HighOnMouseoverDirective,
-    UnlessDirective
+    UnlessDirective,
+    ServicesComponent,
+    LogComponent,
+    DataComponent,
+    DatalogComponent,
+    CommunicationComponent,
+    Comp01Component,
+    Comp02Component
   ],
   imports: [
     BrowserModule,
@@ -47,7 +70,12 @@ import { UnlessDirective } from './directives/unless.directive';
     
     AppRoutes
   ],
-  providers: [],
+  providers: [
+      LogService,
+      DataService,
+      DatalogService,
+      CommunicationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

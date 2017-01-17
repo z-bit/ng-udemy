@@ -1,0 +1,8 @@
+<h2>Simple Log Service</h2>
+<div class="ui action input">
+  <input id="in" #inp type="text" placeholder="Logtext..." (keyup)="onKey($event)" [(ngModel)]="inputValue">
+  <button class="ui button" (click)="onClick(inp.value)">Log</button>
+</div>
+<ul>
+  <li *ngFor="let item of items">{{item}}</li>
+</ul>
