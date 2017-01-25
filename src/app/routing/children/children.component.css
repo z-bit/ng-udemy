@@ -1,0 +1,8 @@
+.active {
+    color: red;
+    font-weight: bold;
+}
+.border {
+    border: 2px solid red;
+    border-radius: 10px;
+}

@@ -1,0 +1,38 @@
+<hr>
+<h3>Childen Component</h3>
+CHILDREN_ROUTES defined in / exported from <i>children.routes.ts</i>. Do the following in<br>
+<b><i>app.routes.ts</i></b>
+<ul>
+  <li>import CHILDREN_ROUTES</li>
+  <li>duplicate the route for children</li>
+  <li>add children: CHILDREN_ROUTES to the now second entry for children</li>
+</ul>
+<pre><code>{{code}}</code></pre>
+<div class="ui grid">
+  <div class="four wide column">
+    <a routerLink="child1" routerLinkActive="active">Child 1</a>
+  </div>
+  <div class="four wide column">
+    <div routerLinkActive="border" [routerLinkActiveOptions]="{exact: true}">
+      <a routerLink="child2">Child 2</a>
+    </div>
+  </div>
+  <div class="four wide column">
+    <a routerLink="child3" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">guarded Child 3</a>
+    <!--
+      [routerLinkActiveOptions] does not apply here. It differentiates between "/user" and "user/1"
+      which would be otherwise both marked class="active". The styling for .active is in children.component.css
+    -->
+  </div>
+  <div class="four wide column">
+    <button class="ui right floated button" routerLink="/routing">Got it!</button>
+  </div>
+</div>
+<div class="active">
+  <i>Child 3</i> has an canActivate guard (children.guard.ts) and an canDeactivate guard (child3.guard.ts)!
+</div>
+  <br>
+<router-outlet></router-outlet>
+
+
+

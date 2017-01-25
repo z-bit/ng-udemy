@@ -1,0 +1,16 @@
+<hr>
+<h3>Snapshot Component</h3>
+<p>
+  If the above ID changes and <b>Route with id</b> will be clicked the according parameter does
+  not change as the child gained the parameter from a snapshot in the constructor:
+</p>
+<pre><code>this.id = activatedRoute.snapshot.params['id'];</code></pre>
+<p>
+  As the component still is displayed the constructor is not executed, no new snapshot.
+  If you close the child with <b>Got it!</b> and call it again the changed parameter will be shown.
+  A new snapshot is created.
+</p>
+<div class="ui blue inverted segment">Snapshot Component received parameter: {{id}}</div>
+<br>
+<button class="ui right floated button" (click)="onClick()">Got it!</button>
+

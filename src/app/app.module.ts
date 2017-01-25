@@ -34,7 +34,17 @@ import { LogService } from "./common/services/log.service";
 import { DataService } from 'app/common/services/data.service';
 import { DatalogService } from 'app/common/services/datalog.service';
 import { CommunicationService } from 'app/common/services/communication.service';
-
+import { FilereadComponent } from './fileread/fileread.component';
+import { RoutingComponent } from './routing/routing.component';
+import { SnapshotComponent } from './routing/snapshot/snapshot.component';
+import { ObservableComponent } from './routing/observable/observable.component';
+import { ChildrenComponent } from './routing/children/children.component';
+import { DetailComponent } from './routing/detail/detail.component';
+import { Child1Component } from './routing/children/child1/child1.component';
+import { Child2Component } from './routing/children/child2/child2.component';
+import { Child3Component } from './routing/children/child3/child3.component';
+import { ChildrenGuard } from './routing/children/children.guard';
+import { Child3Guard } from './routing/children/child3/child3.guard';
 
 
 
@@ -61,7 +71,16 @@ import { CommunicationService } from 'app/common/services/communication.service'
     DatalogComponent,
     CommunicationComponent,
     Comp01Component,
-    Comp02Component
+    Comp02Component,
+    FilereadComponent,
+    RoutingComponent,
+    SnapshotComponent,
+    ObservableComponent,
+    ChildrenComponent,
+    DetailComponent,
+    Child1Component,
+    Child2Component,
+    Child3Component
   ],
   imports: [
     BrowserModule,
@@ -74,7 +93,9 @@ import { CommunicationService } from 'app/common/services/communication.service'
       LogService,
       DataService,
       DatalogService,
-      CommunicationService
+      CommunicationService,
+      ChildrenGuard,
+      Child3Guard
   ],
   bootstrap: [AppComponent]
 })

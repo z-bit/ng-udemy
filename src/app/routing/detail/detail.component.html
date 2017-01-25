@@ -1,0 +1,17 @@
+<hr>
+<h3>Detail Component</h3>
+<h4>Sending Query Params</h4>
+<pre><code>{{code1}}<br>{{code0}}</code></pre>
+<h4>Receiving them with a snapshot</h4>
+<pre><code>{{code2}}</code></pre>
+<h4>Receiving the with an Observable</h4>
+<pre><code>{{code3}}</code></pre>
+Do not forget to unsubscribe() in ngOnDestroy()!
+<h4>Received Parameters</h4>
+<div class="ui raised segment">
+  for snapshot: <b>{{snapshotParam}}</b><br>
+  for observable: <b>{{observableParam}}</b>
+</div>
+<i>You are welcome to change the value for name and click Route again: see what happens!<br>
+In case you wonder study the ID examples.</i>
+<button class="ui right floated button" routerLink="/routing">Got it!</button>

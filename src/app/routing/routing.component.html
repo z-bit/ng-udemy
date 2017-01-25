@@ -1,0 +1,54 @@
+<p>
+  Basic Routing is already implemted othoerwise you would not have found this page.
+  We now want to expand to the following:
+</p>
+<ul>
+  <li>Working with parameters using <b>snapshot</b></li>
+  <li>Working with parameters using <b>Observables</b></li>
+  <li><a routerLink="children">
+    Child Routing using <b>CHILDREN_ROUTES</b> and <b>Guards</b>
+  </a></li>
+</ul>
+<hr>
+<div class="ui grid">
+  <div class="eight wide column">
+    <h3>Snapshot ID: {{ids}}</h3>
+    <div class="ui input">
+      <div class="ui input focus">
+        <input type="text" placeholder="Type an id ..." [(ngModel)]="ids">
+      </div>
+      &nbsp;&nbsp;
+      <button class="ui blue button" routerLink="snapshot/{{ids}}">Route with id</button>
+    </div>
+  </div>
+  <div class="eight wide column">
+    <h3>Observable ID: {{ido}}</h3>
+    <div class="ui input">
+      <div class="ui input focus">
+        <input type="text" placeholder="Type an id ..." [(ngModel)]="ido">
+      </div>
+      &nbsp;&nbsp;
+      <button class="ui blue button" routerLink="observable/{{ido}}">Route with id</button>
+    </div>
+  </div>
+  <div class="ui row">
+    <div class="sixteen wide column">
+      <h3>Query Parameter: ?{{pn}}={{pv}}</h3>
+      <div class="ui input">
+        <div class="ui input disabled">
+          <input type="text" placeholder="param name ..." [(ngModel)]="pn">
+        </div>
+        <div class="ui input focus">
+          <input type="text" placeholder="param value ..." [(ngModel)]="pv">
+        </div>
+        <button class="ui blue button" (click)="onClick()">Route with router.navigate</button>
+        &nbsp;&nbsp;
+        <a routerLink="detail" [queryParams]="{'name': pv}">routerLink</a>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+<router-outlet></router-outlet>
+

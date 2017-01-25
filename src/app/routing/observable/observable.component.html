@@ -1,0 +1,17 @@
+<hr>
+<h3>Observable Component</h3>
+<p>
+  If the above ID changes and <b>Route with id</b> will be clicked the according parameter <b>changes</b>.<br>
+  The constructor now contains an <b>Observable</b>:
+</p>
+<pre><code>activatedRoute.params.subscribe( (params) => this.id = params['id'] );</code></pre>
+<p>If a component is destroyed an Observable lives on!</p>
+<ul>
+  <li>declare a private property <i>subscription</i></li>
+  <li>assign the subscription from above to it</li>
+  <li>unsubscribe from it in the <b>ngOnDestroy</b> lifecycle hook</li>
+</ul>
+
+<div class="ui blue inverted segment">Snapshot Component received parameter: {{id}}</div>
+<br>
+<button class="ui right floated button" (click)="onClick()">Got it!</button>

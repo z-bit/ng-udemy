@@ -1,0 +1,10 @@
+<hr>
+<p>
+  Child 3 works!<br>
+  In order to leave the <b>Done</b> button has to be pressed before <b>Got it!</b>
+</p>
+done: {{done}}
+<button class="ui right floated button" routerLink="/routing/children">Got it!</button>
+<button class="ui right floated button" (click)="done=true">Done</button>
+
+
