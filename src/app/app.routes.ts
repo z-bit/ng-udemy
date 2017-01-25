@@ -22,7 +22,10 @@ import { CHILDREN_ROUTES } from './routing/children/children.routes';
 import { FilereadComponent } from './fileread/fileread.component';
 
 const routes: Route[] = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+//{path: '', redirectTo: 'home', pathMatch: 'full'},
+//this adds a /home if you call the url and the server won't find it.
+//better:
+  {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
   {path: 'first', component: FistAppComponent},
   {path: 'databinding', component: DatabindingComponent},
