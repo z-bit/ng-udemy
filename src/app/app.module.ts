@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppRoutes } from './app.routes';
@@ -45,6 +45,10 @@ import { Child2Component } from './routing/children/child2/child2.component';
 import { Child3Component } from './routing/children/child3/child3.component';
 import { ChildrenGuard } from './routing/children/children.guard';
 import { Child3Guard } from './routing/children/child3/child3.guard';
+import { FormsComponent } from './forms/forms.component';
+import { DataDrivenComponent } from './forms/data-driven/data-driven.component';
+import { TemplateDrivenComponent } from './forms/template-driven/template-driven.component';
+import { FormbuilderComponent } from './forms/formbuilder/formbuilder.component';
 
 
 
@@ -80,11 +84,16 @@ import { Child3Guard } from './routing/children/child3/child3.guard';
     DetailComponent,
     Child1Component,
     Child2Component,
-    Child3Component
+    Child3Component,
+    FormsComponent,
+    DataDrivenComponent,
+    TemplateDrivenComponent,
+    FormbuilderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     
     AppRoutes

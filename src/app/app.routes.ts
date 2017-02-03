@@ -15,8 +15,10 @@ import { SnapshotComponent } from './routing/snapshot/snapshot.component';
 import { ObservableComponent } from './routing/observable/observable.component';
 import { ChildrenComponent } from './routing/children/children.component';
 import { DetailComponent } from './routing/detail/detail.component';
-
 import { CHILDREN_ROUTES } from './routing/children/children.routes';
+import { FormsComponent } from './forms/forms.component';
+import { FORMS_ROUTES } from './forms/forms.routes';
+
 
 
 import { FilereadComponent } from './fileread/fileread.component';
@@ -25,28 +27,29 @@ const routes: Route[] = [
 //{path: '', redirectTo: 'home', pathMatch: 'full'},
 //this adds a /home if you call the url and the server won't find it.
 //better:
-  {path: '', component: HomeComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'first', component: FistAppComponent},
-  {path: 'databinding', component: DatabindingComponent},
-  {path: 'lifecycle', component: LifecycleComponent},
-  {path: 'directives', component: DirectivesComponent},
-  {path: 'services', component: ServicesComponent, children: [
-      {path: 'log', component: LogComponent},
-      {path: 'data', component: DataComponent},
-      {path: 'datalog', component: DatalogComponent},
-      {path: 'communication', component: CommunicationComponent}
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'first', component: FistAppComponent },
+  { path: 'databinding', component: DatabindingComponent },
+  { path: 'lifecycle', component: LifecycleComponent },
+  { path: 'directives', component: DirectivesComponent },
+  { path: 'services', component: ServicesComponent, children: [
+      { path: 'log', component: LogComponent },
+      { path: 'data', component: DataComponent },
+      { path: 'datalog', component: DatalogComponent },
+      { path: 'communication', component: CommunicationComponent }
   ]},
-  {path: 'routing', component: RoutingComponent, children: [
-      {path: 'snapshot/:id', component: SnapshotComponent},
-      {path: 'observable/:id', component: ObservableComponent},
-      {path: 'detail', component: DetailComponent},
-      {path: 'children', component: ChildrenComponent},
-      {path: 'children', component: ChildrenComponent, children: CHILDREN_ROUTES}
+  { path: 'routing', component: RoutingComponent, children: [
+      { path: 'snapshot/:id', component: SnapshotComponent },
+      { path: 'observable/:id', component: ObservableComponent },
+      { path: 'detail', component: DetailComponent },
+      { path: 'children', component: ChildrenComponent },
+      { path: 'children', component: ChildrenComponent, children: CHILDREN_ROUTES }
   ]},
-  {path: 'fileread', component: FilereadComponent},
+  { path: 'forms', component: FormsComponent, children: FORMS_ROUTES },
+  { path: 'fileread', component: FilereadComponent },
 
-  {path: '**', redirectTo:'home', pathMatch: 'full'}
+  { path: '**', redirectTo:'home', pathMatch: 'full' }
 ];
 
 export const AppRoutes = RouterModule.forRoot(routes);

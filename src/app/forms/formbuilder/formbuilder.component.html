@@ -1,0 +1,94 @@
+<h1>Form created with FormBuilder</h1>
+<ul>
+  <li>with <b><i>Custom Validater</i></b> for Gender</li>
+  <li>with <b><i>Async Validator</i></b> for Username which stays 2s
+    invalid unless value is taken (<b><i>Max</i></b>) or empty
+  </li>
+  <li>logs <b><i>valueChanges</i></b> (Object) and <b><i>statusChanges</i></b> (INVALID, PENDING (async), VALID)</li>
+  <li><b><i>form.reset()</i></b> discussed in onSubmit()</li>
+</ul>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div class="ui raised segment">
+    <div class="ui raised segment">
+      <div class="ui grid">
+        <div class="row" formGroupName="userData">
+          <div class="five wide column">
+            Username<br>
+            <div class="form-group ui input">
+              <input
+                  id="username"
+                  type="text"
+                  class="form-control"
+                  formControlName="username">
+            </div>
+            <div *ngIf="!myForm.controls.userData.controls.username.valid">Invalid Username</div>
+          </div>
+          <div class="five wide column">
+            eMail<br>
+            <div class="form-group ui input">
+              <input
+                  id="email"
+                  type="text"
+                  class="form-control"
+                  formControlName="email">
+            </div>
+            <div *ngIf="!myForm.controls.userData.controls.email.valid">Invalid eMail Address</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="five wide column">
+            Password<br>
+            <div class="form-group ui input">
+              <input
+                  id="password"
+                  type="password"
+                  class="form-control"
+                  formControlName="password">
+            </div>
+            <div *ngIf="!myForm.controls['password'].valid">Invalid Password</div>
+          </div>
+          <div class="ten wide column">
+            <div class="radio">
+              Gender<br>
+              <label *ngFor="let g of genders">
+                <input
+                    formControlName="gender"
+                    type="radio"
+                    [value]="g">
+                {{g}}&nbsp;&nbsp;
+              </label>
+            </div>
+            <div *ngIf="!myForm.controls['gender'].valid">Invalid Gender</div>
+          </div>
+        </div>
+        <div class="row">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="ui raised segment">
+      <div formArrayName="hobbies">
+        Hobbies<br>
+        <div class="form-group ui fluid input" *ngFor="let hobby of myForm.controls.hobbies.controls; let i = index;">
+          <input
+              type="text"
+              class="form-control"
+              formControlName="{{i}}"
+          >
+          <button (click)="onRemoveHobby(i)"><b>-</b></button>
+          <br>
+        </div>
+        <button type="button" class="ui button" (click)="onAddHobby()">Add Hobby</button>
+      </div>
+
+
+    </div>
+  </div>
+  <button type="submit" class="ui right floated button" [disabled]="!myForm.valid">Submit</button>
+</form>
+<h4>Loogbook</h4>
+<div id="logbook" class="ui raised segment" style="height: 300px; overflow-y: scroll;">
+
+</div>

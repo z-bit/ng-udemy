@@ -1,0 +1,7 @@
+input.ng-invalid {
+    border: 1px solid red;
+}
+.btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

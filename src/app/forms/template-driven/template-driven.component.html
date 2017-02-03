@@ -1,0 +1,189 @@
+<h3>Template Driven</h3>
+<div class="ui raised segment">
+<div class="ui grid">
+  <div class="ui row">
+    <div class="five wide column">
+      <h4>Form1</h4>
+      <b>ngModel</b><br>
+      Access via form1.value
+      <div class="ui raised segment">
+        <form (ngSubmit)="onSubmitForm1(form1)" #form1="ngForm">
+          <div class="form-group">
+            <label for="username1">Username</label><br>
+            <input
+                name="username1"
+                id="username1"
+                type="text"
+                class="form-control"
+                ngModel
+                required><br><br>
+          </div>
+          <div class="form-group">
+            <label for="email1">Email</label><br>
+            <input
+                type="text"
+                class="form-control"
+                id="email1"
+                ngModel
+                name="email1"
+                pattern="^[^@]+@[^@]+\.[^@]+$"
+                required><br><br>
+          </div>
+          <div class="form-group">
+            <label for="password1">Password</label><br>
+            <input
+                type="password"
+                class="form-control"
+                id="password1"
+                ngModel
+                name="password1"
+                required><br><br>
+          </div>
+          <div class="radio" >
+            <div  *ngFor="let g of genders">
+              <label for="gender1">
+                <input type="radio" id="gender1" name="gender1" value="{{g}}" ngModel>
+                {{g}}
+              </label>
+            </div>
+          </div>
+
+          <br><br>
+          <button type="submit" [disabled]="!form1.valid" class="ui button">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="five wide column">
+      <h4>Form2</h4>
+      <b>[ngModel]="user.name"</b><br>
+      One Way Data Binding
+      <div class="ui raised segment">
+        <form (ngSubmit)="onSubmitForm2(form2)" #form2="ngForm">
+          <div class="form-group">
+            <label for="username2">Username</label><br>
+            <input
+                type="text"
+                class="form-control"
+                id="username2"
+                [ngModel]="user2.name"
+                name="username2"
+                required><br><br>
+          </div>
+          <div class="form-group">
+            <label for="email2">Email</label><br>
+            <p *ngIf="!email.valid">email not valid</p>
+            <input
+                type="text"
+                class="form-control"
+                id="email2"
+                [ngModel]="user2.email"
+                name="email2"
+                pattern="^[^@]+@[^@]+\.[^@]+$"
+                required
+                #email="ngModel"
+            ><br><br>
+
+          </div>
+          <div class="form-group">
+            <label for="password2">Password</label><br>
+            <input
+                type="password"
+                class="form-control"
+                id="password2"
+                [ngModel]="user2.password"
+                name="password2"
+                required><br><br>
+          </div>
+          <div class="radio" >
+            <div  *ngFor="let g of genders">
+              <label>
+                <input type="radio" name="gender2" value="{{g}}" [ngModel]="user2.gender">
+                {{g}}
+              </label>
+            </div>
+          </div><br><br>
+          <button type="submit" ng-class="{disbaled: ng-invalid}" class="ui button">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="five wide column">
+      <h4>Form3</h4>
+      <b>[(ngModel)]="user.name"</b><br>
+      Two Way Data Binding
+      <div class="ui raised segment">
+        <form (ngSubmit)="onSubmitForm3(form3)" #form3="ngForm">
+          <div class="form-group">
+            <label for="username3">Username</label><br>
+            <input
+                type="text"
+                class="form-control"
+                id="username3"
+                [(ngModel)]="user3.name"
+                name="username3"
+                required><br><br>
+          </div>
+          <div class="form-group">
+            <label for="email3">Email</label><br>
+            <input
+                type="text"
+                class="form-control"
+                id="email3"
+                [(ngModel)]="user3.email"
+                name="email3"
+                pattern="^[^@]+@[^@]+\.[^@]+$"
+                required><br><br>
+          </div>
+          <div class="form-group">
+            <label for="password3">Password</label><br>
+            <input
+                type="password"
+                class="form-control"
+                id="password3"
+                [(ngModel)]="user3.password"
+                name="password3"
+                required><br><br>
+          </div>
+          <div class="radio" >
+            <div  *ngFor="let g of genders">
+              <label>
+                <input type="radio" name="gender3" value="{{g}}" [(ngModel)]="user3.gender">
+                {{g}}
+              </label>
+            </div>
+          </div><br><br>
+          <button type="submit" ng-class="{disbaled: ng-invalid}" class="ui button">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<h4>Results / Logs</h4>
+<div class="ui raised segment">
+  <div class="ui grid">
+    <div class="row">
+      <div class="four wide column"></div>
+      <div class="four wide column">Form1</div>
+      <div class="four wide column">Form2</div>
+      <div class="four wide column">Form3</div>
+      <div class="four wide column">Username:</div>
+      <div class="four wide column">{{user1.name}}</div>
+      <div class="four wide column">{{user2.name}}</div>
+      <div class="four wide column">{{user3.name}}</div>
+      <div class="four wide column">Email:</div>
+      <div class="four wide column">{{user1.email}}</div>
+      <div class="four wide column">{{user2.email}}</div>
+      <div class="four wide column">{{user3.email}}</div>
+      <div class="four wide column">Password:</div>
+      <div class="four wide column">{{user1.password}}</div>
+      <div class="four wide column">{{user2.password}}</div>
+      <div class="four wide column">{{user3.password}}</div>
+      <div class="four wide column">Gender:</div>
+      <div class="four wide column">{{user1.gender}}</div>
+      <div class="four wide column">{{user2.gender}}</div>
+      <div class="four wide column">{{user3.gender}}</div>
+    </div>
+  </div>
+  <button class="ui right floated button" [routerLink]="['/forms']">OK</button>
+</div>
