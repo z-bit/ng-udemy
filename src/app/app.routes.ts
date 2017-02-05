@@ -19,9 +19,7 @@ import { CHILDREN_ROUTES } from './routing/children/children.routes';
 import { FormsComponent } from './forms/forms.component';
 import { FORMS_ROUTES } from './forms/forms.routes';
 import { PipesComponent } from './pipes/pipes.component';
-
-
-
+import { HttpComponent } from './http/http.component';
 
 import { FilereadComponent } from './fileread/fileread.component';
 
@@ -50,6 +48,7 @@ const routes: Route[] = [
   ]},
   { path: 'forms', component: FormsComponent, children: FORMS_ROUTES },
   { path: 'pipes', component: PipesComponent},
+  { path: 'http', component: HttpComponent},
 
   { path: 'fileread', component: FilereadComponent },
 

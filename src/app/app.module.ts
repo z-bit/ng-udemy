@@ -54,6 +54,9 @@ import { DoublePipe } from './common/pipes/double.pipe';
 import { BruttoPipe } from './common/pipes/brutto.pipe';
 import { FilterPipe } from './common/pipes/filter.pipe';
 import { ImpureFilterPipe } from './common/pipes/impure-filter.pipe';
+import { HttpComponent } from './http/http.component';
+import { HttpService } from 'app/common/services/http.service';
+
 
 
 
@@ -98,7 +101,8 @@ import { ImpureFilterPipe } from './common/pipes/impure-filter.pipe';
     DoublePipe,
     BruttoPipe,
     FilterPipe,
-    ImpureFilterPipe
+    ImpureFilterPipe,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
@@ -114,7 +118,8 @@ import { ImpureFilterPipe } from './common/pipes/impure-filter.pipe';
       DatalogService,
       CommunicationService,
       ChildrenGuard,
-      Child3Guard
+      Child3Guard,
+      HttpService,
   ],
   bootstrap: [AppComponent]
 })

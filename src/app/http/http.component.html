@@ -1,0 +1,18 @@
+<h2>Http</h2>
+Recived from Firebase: <b>{{titleValue}}</b>
+<hr>
+<div class="ui input">
+  <input type="text" placeholder="username" #username>&nbsp;&nbsp;
+  <input type="email" placeholder="email" #email>&nbsp;&nbsp;
+</div>
+<button class="ui primary button" (click)="onSubmit(username.value, email.value)">Send to Firebase</button>
+<p [hidden]="!answerArrived">
+  <a href="https://ng-udemy.firebaseio.com/user/{{postResponse}}" target="_blank">
+    Inserted into Firebase, have a look!
+  </a>
+</p>
+<hr>
+<button class="ui primary button" (click)="onGetUsers()">Get Users</button>
+<ul>
+  <li *ngFor="let user of users">{{user.username}} - ({{user.email}})</li>
+</ul>
