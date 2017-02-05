@@ -18,6 +18,8 @@ import { DetailComponent } from './routing/detail/detail.component';
 import { CHILDREN_ROUTES } from './routing/children/children.routes';
 import { FormsComponent } from './forms/forms.component';
 import { FORMS_ROUTES } from './forms/forms.routes';
+import { PipesComponent } from './pipes/pipes.component';
+
 
 
 
@@ -47,9 +49,12 @@ const routes: Route[] = [
       { path: 'children', component: ChildrenComponent, children: CHILDREN_ROUTES }
   ]},
   { path: 'forms', component: FormsComponent, children: FORMS_ROUTES },
+  { path: 'pipes', component: PipesComponent},
+
   { path: 'fileread', component: FilereadComponent },
 
-  { path: '**', redirectTo:'home', pathMatch: 'full' }
+  { path: '**', redirectTo:'home', pathMatch: 'full' },
+
 ];
 
 export const AppRoutes = RouterModule.forRoot(routes);

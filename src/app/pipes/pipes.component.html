@@ -1,0 +1,51 @@
+<div class="pipesXX">
+  <h2>Pipes</h2>
+  <b>Built-in Pipes</b>
+  <ul>
+    <li><b>uppercase</b> - {{myValue}} &nbsp;&nbsp;>>>&nbsp;&nbsp; {{myValue | uppercase}}</li>
+    <li><b>slice:3:7</b> - {{myValue}} &nbsp;&nbsp;>>>&nbsp;&nbsp; {{myValue | slice:3:7}}</li>
+    <li><b>slice:3:7 | uppercase</b> - {{myValue}} &nbsp;&nbsp;>>>&nbsp;&nbsp; {{myValue | slice:3:7 | uppercase}}</li>
+    <li><b>date</b> - {{myDate}} &nbsp;&nbsp;>>>&nbsp;&nbsp; {{myDate | date }}</li>
+    <li><b>date:'dd.MM.yy'</b> - {{myDate}} &nbsp;&nbsp;>>>&nbsp;&nbsp; {{myDate | date:'dd.MM.yy' }}</li>
+    <li><a href="https://angular.io/docs/ts/latest/api/#!?type=pipe" target="_blank">Pipes in angular.io</a></li>
+    <!--  <li>date:{{}} &nbsp;&nbsp;>>>&nbsp;&nbsp; {{}}</li>  -->
+  </ul>
+  <b>Custom Pipes</b>
+  <ul>
+    <li><b>ng g p double </b>(ng generate pipe double)</li>
+    <li><b>double</b> - {{myPrice}} &nbsp;&nbsp;>>>&nbsp;&nbsp; {{myPrice | double }}</li>
+    <li>
+      <b>brutto:{{UstInProzent}}</b> - {{myPrice}} &nbsp;&nbsp;>>>&nbsp;&nbsp; {{myPrice | brutto:UstInProzent }}
+      <br><br><hr>
+      <input #newItem>&nbsp;&nbsp;
+      <button (click)="values.push(newItem.value)">Add Item</button>
+    </li>
+    <li><b>unfiltered list</b>
+      <ul>
+        <li *ngFor="let item of values">{{item}}</li>
+      </ul>
+    </li>
+    <li>
+      <b>pure pipe</b> does not update the list with elements containing <i>ea</i><br>
+      <code  ngNonBindable>&lt;li *ngFor="let item of values | filter:'ea'">{{ item }}&lt;/li&gt;</code>
+    </li>
+    <ul>
+      <li *ngFor="let item of values | filter:'ea'">{{item}}</li>
+    </ul>
+    <li>
+      <b>impure pipe</b> same code, just insert <b><i>pure: false</i></b> in the @Pipe metadata <br>
+      Impure pipes are very expensive, they update the view after every keystroke <br>
+      <code  ngNonBindable>&lt;li *ngFor="let item of values | impureFilter:'ea'">{{ item }}&lt;/li&gt;</code>
+    </li>
+    <ul>
+      <li *ngFor="let item of values | impureFilter:'ea' ">{{item}}</li>
+    </ul>
+    <hr>
+  </ul>
+  <b>Async Pipe</b>
+  <ul>
+    <li>It takes a Promise/Observable and makes the values available after they arrived.</li>
+    <li><span ngNonBindable> no pipe, just {{ asyncValue }}: </span> {{asyncValue}}</li>
+    <li><span ngNonBindable> async pipe {{ asyncValue | async }}: </span> <b>{{asyncValue | async}}</b></li>
+  </ul>
+</div>

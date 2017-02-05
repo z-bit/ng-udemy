@@ -49,6 +49,11 @@ import { FormsComponent } from './forms/forms.component';
 import { DataDrivenComponent } from './forms/data-driven/data-driven.component';
 import { TemplateDrivenComponent } from './forms/template-driven/template-driven.component';
 import { FormbuilderComponent } from './forms/formbuilder/formbuilder.component';
+import { PipesComponent } from './pipes/pipes.component';
+import { DoublePipe } from './common/pipes/double.pipe';
+import { BruttoPipe } from './common/pipes/brutto.pipe';
+import { FilterPipe } from './common/pipes/filter.pipe';
+import { ImpureFilterPipe } from './common/pipes/impure-filter.pipe';
 
 
 
@@ -88,7 +93,12 @@ import { FormbuilderComponent } from './forms/formbuilder/formbuilder.component'
     FormsComponent,
     DataDrivenComponent,
     TemplateDrivenComponent,
-    FormbuilderComponent
+    FormbuilderComponent,
+    PipesComponent,
+    DoublePipe,
+    BruttoPipe,
+    FilterPipe,
+    ImpureFilterPipe
   ],
   imports: [
     BrowserModule,
