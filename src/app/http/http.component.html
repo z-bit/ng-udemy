@@ -1,17 +1,42 @@
 <h2>Http</h2>
-Recived from Firebase: <b>{{titleValue}}</b>
+<b>getData() from Firebase</b>
+<ul>
+
+  <li>by subscribe()  in ngOnInit(): <b>{{titleString}}</b></li>
+  <li>by subscribe() error handling: <b>{{titleError}}</b></li>
+
+  <li>async successful: <b>{{asyncObservable | async}}</b></li>
+  <li>async with error: <b>{{asyncError | async}}{{realError}}</b></li>
+
+</ul>
 <hr>
+
+<p>
+  In order for this to throw an error, the whole Firebase rules have to be set to &nbsp; <code>".write": "false"</code><br>
+  as I do not know (yet) how to set a single database entry to read only.
+</p>
+<div class="ui very small input">
+  <input type="text" value="Mrs." #roTitle>&nbsp;&nbsp;
+  <input type="text" value="Pauline" #roName>&nbsp;&nbsp;
+  <input type="text" value="f" #roSex>&nbsp;&nbsp;
+</div>
+<button class="ui orange button" (click)="onSubmitReadOnly(roTitle.value, roName.value, roSex.value)">to ReadOnly</button>
+<p [hidden]="!postError">{{postError}}</p>
+<hr>
+
 <div class="ui input">
   <input type="text" placeholder="username" #username>&nbsp;&nbsp;
   <input type="email" placeholder="email" #email>&nbsp;&nbsp;
 </div>
-<button class="ui primary button" (click)="onSubmit(username.value, email.value)">Send to Firebase</button>
+<button class="ui primary button" (click)="onSubmit(username.value, email.value)">Add User to Firebase</button>
 <p [hidden]="!answerArrived">
   <a href="https://ng-udemy.firebaseio.com/user/{{postResponse}}" target="_blank">
     Inserted into Firebase, have a look!
-  </a>
+  </a> (or press <b>Get Users</b>)
 </p>
+<p [hidden]="!sendError">{{sendError}}</p>
 <hr>
+
 <button class="ui primary button" (click)="onGetUsers()">Get Users</button>
 <ul>
   <li *ngFor="let user of users">{{user.username}} - ({{user.email}})</li>
