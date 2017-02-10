@@ -56,9 +56,15 @@ import { FilterPipe } from './common/pipes/filter.pipe';
 import { ImpureFilterPipe } from './common/pipes/impure-filter.pipe';
 import { HttpComponent } from './http/http.component';
 import { HttpService } from 'app/common/services/http.service';
+import { AuthComponent } from './auth/auth.component';
+import { AuthService } from 'app/common/services/auth.service';
+import { AuthGuard } from 'app/common/services/auth.guard';
 
 
-
+import { ProtectedComponent } from './auth/protected/protected.component';
+import { SigninComponent } from './auth/unprotected/signin/signin.component';
+import { SignupComponent } from './auth/unprotected/signup/signup.component';
+import { PageComponent } from './auth/unprotected/page/page.component';
 
 @NgModule({
   declarations: [
@@ -102,7 +108,13 @@ import { HttpService } from 'app/common/services/http.service';
     BruttoPipe,
     FilterPipe,
     ImpureFilterPipe,
-    HttpComponent
+    HttpComponent,
+    AuthComponent,
+    ProtectedComponent,
+    SigninComponent,
+    SignupComponent,
+    PageComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -120,6 +132,8 @@ import { HttpService } from 'app/common/services/http.service';
       ChildrenGuard,
       Child3Guard,
       HttpService,
+      AuthService,
+      AuthGuard
   ],
   bootstrap: [AppComponent]
 })

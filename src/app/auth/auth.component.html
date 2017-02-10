@@ -1,0 +1,17 @@
+<h1>Authentication &amp; Route Protection</h1>
+<b>You will only have acces to <i>Protected Page</i> after you are logged in.</b>
+<div class="ui raised segment">logged in: {{isAuthenticated}}</div>
+<header>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <ul class="navbar navbar-nav">
+        <li *ngIf="!isAuth()"><a routerLink="signin">Login</a> or <a routerLink="signup">Sign Up</a></li>
+        <li><a routerLink="unprotected">Unprotected Page</a></li>
+        <li><a routerLink="protected">Protected Page</a></li>
+        <li *ngIf="isAuth()"><a (click)="onLogout()" style="cursor: pointer">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<hr>
+<router-outlet></router-outlet>

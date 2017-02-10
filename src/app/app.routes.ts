@@ -20,6 +20,10 @@ import { FormsComponent } from './forms/forms.component';
 import { FORMS_ROUTES } from './forms/forms.routes';
 import { PipesComponent } from './pipes/pipes.component';
 import { HttpComponent } from './http/http.component';
+import { AuthComponent } from './auth/auth.component';
+import { AUTH_ROUTES } from './auth/auth.routes';
+
+
 
 import { FilereadComponent } from './fileread/fileread.component';
 
@@ -49,6 +53,7 @@ const routes: Route[] = [
   { path: 'forms', component: FormsComponent, children: FORMS_ROUTES },
   { path: 'pipes', component: PipesComponent},
   { path: 'http', component: HttpComponent},
+  { path: 'auth', component: AuthComponent, children: AUTH_ROUTES },
 
   { path: 'fileread', component: FilereadComponent },
 

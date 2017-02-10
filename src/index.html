@@ -11,5 +11,18 @@
 </head>
 <body>
   <app-root>Loading...</app-root>
+
+  <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+  <script>
+      // Initialize Firebase
+      var config = {
+          apiKey: "AIzaSyD1e6ZUt6ElvGAYd8Z8rbtER3muJrLcc6s",
+          authDomain: "zbit-recipes.firebaseapp.com",
+          databaseURL: "https://zbit-recipes.firebaseio.com",
+          storageBucket: "zbit-recipes.appspot.com",
+          messagingSenderId: "1000818238908"
+      };
+      firebase.initializeApp(config);
+  </script>
 </body>
 </html>

@@ -1,0 +1,32 @@
+<h3>Please sign up to use all features</h3>
+
+<form [formGroup]="signupForm" (ngSubmit)="onSignup($event)" class="ui grid">
+  <div class="row">
+    <div class="five wide column ui input">
+      <b>eMail</b><br>
+      <input formControlName="email" type="email" id="email" #email><br>
+      <span *ngIf="!email.pristine && email.errors != null && email.erros['noEmail']">Invalid eMail</span>
+    </div>
+    <div class="four wide column ui input">
+      <b>Password</b><br>
+      <input formControlName="password" type="password" id="password">
+    </div>
+    <div class="four wide column ui input">
+      <b>Confirm Password</b>
+      <input
+          formControlName="password2"
+          type="password"
+          id="password2"
+          #password2
+          class="ui input"
+      ><br>
+      <span *ngIf="!password2.pristine && password2.errors != null && password2.errors['passwordsNotMatch']">
+        Passwords do not match
+      </span>
+    </div>
+    <div class="three wide column">
+      <br>
+      <button type="submit" [disabled]="!signupForm.valid" class="ui button primary">Sign Up</button>
+    </div>
+  </div>
+</form>

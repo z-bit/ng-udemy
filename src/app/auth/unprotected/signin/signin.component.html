@@ -1,0 +1,18 @@
+<h3>Please login to use all features</h3>
+
+<form [formGroup]="signinForm" (ngSubmit)="onSignin($event)" class="ui grid">
+  <div class="row">
+    <div class="five wide column ui input">
+      <b>eMail</b><br>
+      <input formControlName="email" type="email" id="email" class="form-control">
+    </div>
+    <div class="four wide column ui input">
+      <b>Password</b><br>
+      <input formControlName="password" type="password" id="password" class="form-control">
+    </div>
+    <div class="three wide column">
+      <b> </b><br>
+      <button type="submit" [disabled]="!signinForm.valid" class="ui primary button">Login</button>
+    </div>
+  </div>
+</form>
