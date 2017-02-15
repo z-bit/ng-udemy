@@ -22,6 +22,8 @@ import { PipesComponent } from './pipes/pipes.component';
 import { HttpComponent } from './http/http.component';
 import { AuthComponent } from './auth/auth.component';
 import { AUTH_ROUTES } from './auth/auth.routes';
+import { AnimationComponent } from './animation/animation.component';
+
 
 
 
@@ -54,6 +56,7 @@ const routes: Route[] = [
   { path: 'pipes', component: PipesComponent},
   { path: 'http', component: HttpComponent},
   { path: 'auth', component: AuthComponent, children: AUTH_ROUTES },
+  { path: 'animation', component: AnimationComponent},
 
   { path: 'fileread', component: FilereadComponent },
 

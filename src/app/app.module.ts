@@ -65,6 +65,7 @@ import { ProtectedComponent } from './auth/protected/protected.component';
 import { SigninComponent } from './auth/unprotected/signin/signin.component';
 import { SignupComponent } from './auth/unprotected/signup/signup.component';
 import { PageComponent } from './auth/unprotected/page/page.component';
+import { AnimationComponent } from './animation/animation.component';
 
 @NgModule({
   declarations: [
@@ -114,6 +115,7 @@ import { PageComponent } from './auth/unprotected/page/page.component';
     SigninComponent,
     SignupComponent,
     PageComponent,
+    AnimationComponent,
 
   ],
   imports: [

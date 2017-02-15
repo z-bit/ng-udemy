@@ -51,7 +51,7 @@ export class AuthService {
       } else {
         subject.next(false);
       }
-    })
+    });
     return subject.asObservable();
   }
 

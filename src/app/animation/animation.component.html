@@ -1,0 +1,67 @@
+<h1>Animations</h1>
+<div class="ui raised segment">
+  <button (click)="onAnimate1()" class="ui button primary">Animate 1</button>
+  <button (click)="onAnimate2()" class="ui button primary">Animate 2</button>
+  <button (click)="onShrink()"  class="ui button primary">Shrink!</button>
+  <br><br>
+  <div
+      [@divState]="state"
+      style="width: 300px; height: 30px;"
+      >
+  </div>
+  <div [@doubleState]="doubleState" style="width: 300px; height: 30px;"></div>
+  <div [@wildState]="wildState" style="width: 300px; height: 30px;"></div>
+</div>
+
+
+<div class="ui input">
+  <input type="text"  #input>
+</div>
+<button (click)="onAddItem(input.value)"  class="ui button primary">Add</button>
+<br><br>
+<div class="ui grid row">
+  <div class="seven wide column">
+    <div class="ui raised segment">
+      <ul>
+        <li
+            (click)="onDelete(item)"
+            *ngFor="let item of list1"
+            [@list1]
+        >{{item}}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="two wide column">
+    <button (click)="onMove()"  class="ui button primary">Move</button>
+    <br><br>
+    <button (click)="onMoveBack()"  class="ui button primary">Back</button>
+  </div>
+  <div class="seven wide column">
+    <div class="ui raised segment">
+      <ul>
+        <li
+            (click)="onDelete(item)"
+            *ngFor="let item of list2"
+            [@list2]
+        >{{item}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<h3>Working with Keyframes</h3>
+<div class="ui raised segment">
+  <ul>
+    <li
+        (click)="onDelete(item)"
+        *ngFor="let item of list1"
+        [@list3]
+        (@list3.start)="animationStarted($event)"
+        (@list3.done)="animationEnded($event)"
+    >{{item}}</li>
+  </ul>
+  Watch console for logging via animation callback.
+</div>
+
+
+
+
