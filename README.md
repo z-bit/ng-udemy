@@ -1,6 +1,7 @@
 # NgUdemy
 
-Follows the Udemy Course [Angular 2 - The Complete Guide]([https://www.udemy.com/the-complete-guide-to-angular-2/)
+Follows the Udemy Course [Angular 2 - The Complete Guide](https://www.udemy.com/the-complete-guide-to-angular-2/)
+
 The live running app is to be found here on [Github-Pages](https://z-bit.github.io/)
 
 ---
